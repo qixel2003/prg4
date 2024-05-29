@@ -19,12 +19,11 @@ export class Door extends Actor {
     openDoor() {
         if (this.state) {
             // Apply a red tint when the state is true
-            const tintedSprite = this.originalSprite.clone();
-            tintedSprite.addEffect(new ex.Graphics.Effects.Fill(Color.Red));
+            const tintedSprite = new Color(0, 0, 0);
             this.graphics.use(tintedSprite);
+
         } else {
             // Use the original sprite when the state is false
-            this.graphics.use(this.originalSprite);
         }
         console.log("open")
     }
