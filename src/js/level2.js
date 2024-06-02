@@ -11,7 +11,7 @@ import { Door } from './door.js';
 import { Enemy } from './enemy.js';
 import { UI } from './ui.js';
 
-export class Level extends Scene {
+export class Level2 extends Scene {
     onInitialize(engine) {
         this.startLevel();
     }
@@ -35,11 +35,15 @@ export class Level extends Scene {
         this.createCoin(400, 250);
         this.createCoin(600, 350);
         this.createCoin(800, 350);
+        this.createCoin(900, 350);
+        this.createCoin(1100, 350);
         this.createDoor(1850, 600);
         this.createShark();
         this.createEnemy(600, 580);
         this.createEnemy(800, 580);
         this.createEnemy(1200, 580);
+        // this.createEnemy(1300, 580);
+        this.createEnemy(1450, 580);
 
         this.ui = new UI();
         this.add(this.ui);
@@ -111,4 +115,4 @@ export class Level extends Scene {
         this.score = 0;
     }
 }
-new Level
+new Level2

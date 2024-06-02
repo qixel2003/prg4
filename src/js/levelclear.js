@@ -1,24 +1,24 @@
 import '../css/style.css'
 import { Actor, Engine, Vector, Color, Label, FontUnit, Font, BoundingBox, SolverStrategy, Scene, Keys } from "excalibur"
-import { GameoverBackground } from './gameoverBackground.js'
+import { LevelclearBackground } from './levelclearBackground.js'
 import { Resources, ResourceLoader } from './resources.js'
 
-export class GameOver extends Scene {
+export class LevelClear extends Scene {
     onInitialize(engine) {
-        this.add(new GameoverBackground(350, 300))
-        this.showGameover()
+        this.add(new LevelclearBackground(350, 300))
+        this.showLeverclear()
     }
     onActivate(ctx) {
         this.on('preupdate', (event) => {
 
             if (event.engine.input.keyboard.wasPressed(Keys.Space)) {
-                event.engine.goToScene('level')
+                event.engine.goToScene('intro')
 
             }
         });
     }
 
-    showGameover() {
-        console.log("game over")
+    showLeverclear() {
+        console.log("level completed")
     }
 }

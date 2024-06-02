@@ -7,14 +7,16 @@ import { Shark } from './shark.js'
 import { Background } from './background.js'
 import { Platform } from './platform.js'
 import { Level } from './level.js'
+import { Level2 } from './level2.js'
 import { GameOver } from './game_over.js'
-
+import { LevelClear } from './levelclear.js'
+import { Intro } from './intro.js'
 
 
 
 const options = {
     width: 800, height: 600,
-    backgroundColor: Color.White,
+    backgroundColor: Color.Black,
     displayMode: DisplayMode.FitScreen,
     physics: {
         solver: SolverStrategy.Realistic,
@@ -31,9 +33,13 @@ export class Game extends Engine {
     }
 
     startGame() {
+        this.add('intro', new Intro())
         this.add('level', new Level())
-        this.add('game-over', new GameOver())
-        this.goToScene('level')
+        this.add('level2', new Level2())
+        this.add('gameover', new GameOver())
+        this.add('levelclear', new LevelClear())
+        this.goToScene('intro')
+        // this.goToScene('level')
     }
 }
 
